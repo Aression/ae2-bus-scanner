@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ae2-bus-scanner"
+version = "0.1.0"
+description = "Scan Minecraft saves for AE2 buses and interfaces filtered by item IDs"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+  "anvil-parser2",
+  "NBT",
+  "frozendict",
+]
+
+[project.scripts]
+ae2-bus-scanner = "ae2_bus_scanner.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
